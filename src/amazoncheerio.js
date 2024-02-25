@@ -34,7 +34,9 @@ async function scrapeAmazon(keyword) {
             });
         });
 
-        return products;
+        var productsJSON = JSON.parse(JSON.stringify(products))
+
+        return productsJSON;
     } catch (error) {
         console.error('Error scraping Amazon:', error);
         return [];
@@ -49,3 +51,5 @@ scrapeAmazon(keyword)
     .catch(error => {
         console.error('Erro:', error);
     });
+
+
