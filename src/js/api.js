@@ -1,6 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 const scrape = require("./amazoncheerio");
 const app = express();
+
+app.use(
+    cors({
+        origin: '*'
+    })
+)
+
 const port = 3000;
 
 app.get("/api/scrape", async (req, res) => {

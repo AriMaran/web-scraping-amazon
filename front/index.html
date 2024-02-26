@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/start.js"></script>
     <title>Amazon Web Scraper</title>
 </head>
 <body>
     <div class="web-scraping">
         <div class="keyword">
           <form>
-            <input type="text" placeholder="Enter keyword"/>
-            <button>Start</button>
+            <input id="keyword" type="text" placeholder="Enter keyword"/>
           </form>
+          <button id="startBtn" onclick="scrape(keyword.value)">Start</button>
+        </div>
+
+        <div id="result">
+
         </div>
     </div>
 </body>
