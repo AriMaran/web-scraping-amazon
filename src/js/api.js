@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const scrape = require("./amazoncheerio");
+const scrape = require("./amazonScraper");
 const app = express();
 
 app.use(
