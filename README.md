@@ -31,3 +31,5 @@ Project Link: [https://github.com/AriMaran/amazon-data-extractor](https://github
 ## Note
 
 This project is still under development and not yet finalized. Expect changes and updates as development progresses.
+
+The favicon and the Amazon logo are trademarks of Amazon.com, Inc. All rights reserved.
