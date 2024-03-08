@@ -5,9 +5,12 @@ async function scrape(kw){
 
     if (response.ok) {
         let json = await response.json()
-        let result = ""
+        let result = "" //<div class='products-container'>
         for (let i=0;i<json.length;++i){
             result+="<div class=''>"+json[i].title+"</div>"
+            result+="<div class=''>"+json[i].rating+"</div>"
+            result+="<div class=''>"+json[i].reviews+"</div>"
+            result+='<img src="'+json[i].image+'>'
         }
 
         $("#result").html(result)

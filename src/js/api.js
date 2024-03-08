@@ -3,11 +3,23 @@ const cors = require("cors");
 const scrape = require("./amazonScraper");
 const app = express();
 
-app.use(
+
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+  
+  
+/*app.use(
     cors({
         origin: '*'
     })
-)
+)*/
 
 const port = 3000;
 
