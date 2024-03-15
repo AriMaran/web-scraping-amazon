@@ -41,3 +41,15 @@
   .keyword button:hover, .keyword button:active, .keyword button:focus {
     background: #43A047;
   }
+
+  .products-result{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 0.8;
+    text-align: center;
+  }
+
+  .product-img{
+    
+    text-align: center;
+  }
