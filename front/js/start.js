@@ -5,14 +5,14 @@ async function scrape(kw){
 
     if (response.ok) {
         let json = await response.json()
-        let result = "" //<div class='products-container'>
+        let result = ""
         for (let i=0;i<json.length;++i){
+            result+="<img class='product-img' src='"+json[i].image+"'/>"
             result+="<div class='product-title'>"+json[i].title+"</div>"
             result+="<div class='product-rating'>"+json[i].rating+"</div>"
             result+="<div class='product-reviews'>"+json[i].reviews+"</div>"
-            result+="<img class='product-img' src='"+json[i].image+"'/>"
+            result+="<div class='product-price'>"+json[i].price+"</div>"
             console.log(result)
-           // result+='<iframe frameborder ="1" src ='+json[i].image+'>'
 
         }
 

@@ -25,11 +25,13 @@ async function scrapeAmazon(keyword) {
             const rating = $(element).find(".a-icon-star-small").text().trim();
             const reviews = $(element).find(".a-size-small").first().text().trim();
             const image = $(element).find("img").attr("src");
+            const price = $(element).find(".a-price .a-offscreen").text().trim();
             if (title !== "")
                 products.push({
                     title,
                     rating,
                     reviews,
+                    price,
                     image
                 });
         });
