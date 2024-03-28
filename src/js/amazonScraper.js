@@ -21,12 +21,24 @@ async function scrapeAmazon(keyword) {
         const products = [];
 
         $(".s-result-item").each((index, element) => {
-            const title = $(element).find("h2").text().trim();
-            const rating = $(element).find(".a-icon-star-small").text().trim();
-            const reviews = $(element).find(".a-size-small").first().text().trim();
-            const image = $(element).find("img").attr("src");
-            const price = $(element).find(".a-price .a-offscreen").text().trim();
-            if (title !== "")
+            let title = $(element).find("h2").text().trim();
+            let rating = $(element).find(".a-icon-star-small").text().trim();
+            let reviews = $(element).find(".a-size-small").first().text().trim();
+            let image = $(element).find("img").attr("src");
+            let price = $(element).find(".a-price .a-offscreen").text().trim();
+
+            const regex = /\$\d+(\.\d+)?/g;
+            const prices = price.match(regex);
+
+            if (prices) {
+                if (prices.length === 1) {
+                    price = prices[0];
+                } else {
+                    price = prices.join(" - ");
+                }
+            }
+            
+            if (title !== "" && price )
                 products.push({
                     title,
                     rating,
