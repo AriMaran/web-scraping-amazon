@@ -1,3 +1,15 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style */
+
+body{
+  background-color: #F0EBF8;
+}
 .web-scraping {
     width: 360px;
     padding: 8% 0 0;
@@ -43,6 +55,7 @@
   }
 
   .products-result{
+    background-color: #FFFFFF;
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 0.8;

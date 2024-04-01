@@ -16,6 +16,9 @@ async function scrape(kw){
 
         }
 
+        const unhide_div = document.getElementById('result')
+        unhide_div.removeAttribute('hidden')
+        
         $("#result").html(result)
         console.log(json)
     } else {
