@@ -66,3 +66,41 @@ body{
     
     text-align: center;
   }
+
+  @media screen and (max-width: 600px){
+
+    .web-scraping {
+      width: 90%; 
+      padding: 20px 0; 
+  }
+
+  .keyword {
+      max-width: 90%;
+      margin: 0 auto; 
+      padding: 20px; 
+  }
+
+  .keyword input {
+      width: 100%;
+      padding: 10px;
+      font-size: 12px;
+  }
+
+  .keyword button {
+      width: 100%;
+      font-size: 12px;
+      padding: 10px; 
+  }
+
+  .product-img{
+    margin-top: 60px;
+    width: 50%;
+  }
+  .products-result{
+    background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 2;
+    font-size: 10px;
+  }
+}
