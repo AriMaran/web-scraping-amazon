@@ -1,6 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+//Perform web scraping on Amazon based on a provided keyword.
 async function scrapeAmazon(keyword) {
     try {
         const url = `https://www.amazon.com/s?k=${encodeURIComponent(keyword)}`;
@@ -20,6 +21,7 @@ async function scrapeAmazon(keyword) {
 
         const products = [];
 
+        //It iterates over HTML elements on the Amazon page and extracts product information, storing it in variables.
         $(".s-result-item").each((index, element) => {
             let title = $(element).find("h2").text().trim();
             let rating = $(element).find(".a-icon-star-small").text().trim();
@@ -27,9 +29,13 @@ async function scrapeAmazon(keyword) {
             let image = $(element).find("img").attr("src");
             let price = $(element).find(".a-price .a-offscreen").text().trim();
 
+            //Find price patterns within a string and stores the prices in an array
             const regex = /\$\d+(\.\d+)?/g;
             const prices = price.match(regex);
 
+            /*Checks if the variable prices exists, if it contains values, and if there is only one price in the 
+              prices array. If there is more than one, the prices are joined into a single string separated 
+              by a hyphen*/
             if (prices) {
                 if (prices.length === 1) {
                     price = prices[0];
@@ -38,6 +44,8 @@ async function scrapeAmazon(keyword) {
                 }
             }
             
+            /*Checks if both the title and the price of a product are different from an empty
+              string to avoid fetching unnecessary information*/
             if (title !== "" && price )
                 products.push({
                     title,

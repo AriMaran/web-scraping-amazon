@@ -4,7 +4,7 @@ const scrape = require("./amazonScraper");
 const app = express();
 
 
-
+// Enables CORS to allow requests from any origin and specifies which custom headers are allowed in the requests
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -13,16 +13,10 @@ app.use(function(req, res, next) {
     );
     next();
   });
-  
-  
-/*app.use(
-    cors({
-        origin: '*'
-    })
-)*/
 
 const port = 3000;
 
+// Defines a route to perform web scraping based on a provided keyword and returns the results in JSON format
 app.get("/api/scrape", async (req, res) => {
     const keyword = req.query.keyword;
     if (!keyword) {
@@ -37,6 +31,7 @@ app.get("/api/scrape", async (req, res) => {
     }
 });
 
+// "Starts the Express application server."
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
